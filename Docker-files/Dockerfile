@@ -1,6 +1,6 @@
 FROM openjdk:8 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
-RUN git clone -b yannick git@github.com:yandjoumbi/java-hello-world-webapp.git
+RUN git clone -b yannick https://github.com/yandjoumbi/java-hello-world-webapp.git
 RUN cd java-hello-world-webapp && mvn install
 
 FROM tomcat:8-jre11
