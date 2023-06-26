@@ -2,9 +2,9 @@ name: CI with maven
 
 on:
   push:
-    branches: [ cicd-jenkins ]
+    branches: [ yannick ]
   pull_request:
-    branches: [ cicd-jenkins ]
+    branches: [ yannick ]
 
 # env:
 #   SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
@@ -27,4 +27,3 @@ jobs:
     - name: Build project with Maven
       run: mvn -B package --file pom.xml
 
-      
