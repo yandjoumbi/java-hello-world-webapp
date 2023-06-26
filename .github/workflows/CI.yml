@@ -23,6 +23,8 @@ jobs:
     
     # - name: clean the application 
     #   run: mvn -s settings.xml -DskipTests install
-    
+
     - name: Build project with Maven
       run: mvn -B package --file pom.xml
+
+      
