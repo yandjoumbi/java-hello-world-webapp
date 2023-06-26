@@ -49,6 +49,7 @@ jobs:
         # ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
         # IMAGE_TAG: latest
       run: |
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/v6n8a7u8
             docker build -t my-project ./Docker-files/
             docker tag my-project:latest public.ecr.aws/v6n8a7u8/my-project:latest 
             docker push public.ecr.aws/v6n8a7u8/my-project:latest
