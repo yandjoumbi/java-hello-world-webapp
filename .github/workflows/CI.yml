@@ -51,6 +51,7 @@ jobs:
       run: |
             docker build -t  public.ecr.aws/v6n8a7u8/my-project:latest ./Docker-files/
             docker push public.ecr.aws/v6n8a7u8/my-project:latest
+    
 
         
 
