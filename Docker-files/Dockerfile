@@ -9,5 +9,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY --from=BUILD_IMAGE java-hello-world-webapp/target/java-hello-world.war /usr/local/tomcat/webapps/ROOT.war
 
+RUN aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/v6n8a7u8
+
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
