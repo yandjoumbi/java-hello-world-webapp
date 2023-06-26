@@ -35,8 +35,8 @@ jobs:
     - name: Setup AWS ECR Details
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: AKIAYWJUS24ZF544OJNX
+        aws-secret-access-key: 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
         aws-region: us-east-1
 
     - name: Login to Amazon ECR
@@ -44,12 +44,12 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
       
     - name: Build and push the tagged docker image to Amazon ECR
-      env:
-        ECR_REGISTRY: public.ecr.aws/v6n8a7u8
-        ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
-        IMAGE_TAG: latest
+      # env:
+        # ECR_REGISTRY: public.ecr.aws/v6n8a7u8
+        # ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
+        # IMAGE_TAG: latest
       run: |
-            docker build -t  public.ecr.aws/v6n8a7u8/my-project:latest ./Docker-files/
+            docker build -t public.ecr.aws/v6n8a7u8/my-project:latest ./Docker-files/
             docker push public.ecr.aws/v6n8a7u8/my-project:latest
     
 
