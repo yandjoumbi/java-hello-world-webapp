@@ -1,19 +1,22 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: vproapp
+  labels: 
+    app: vproapp
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: vproapp
   template:
     metadata:
       labels:
-        app: app
+        app: vproapp
     spec:
       containers:
-        - name: app-container
-          image: public.ecr.aws/v6n8a7u8/my-project:latest
-          ports:
-            - containerPort: 8080
+      - name: vproapp
+        image: public.ecr.aws/v6n8a7u8/my-project:latest
+        ports:
+        - name: vproapp-port
+          containerPort: 8080
