@@ -1,0 +1,2 @@
+kubectl apply -f my-manifest.yaml
+curl http://<external-ip>:<port>
