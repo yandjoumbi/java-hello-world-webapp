@@ -60,11 +60,11 @@ jobs:
     #   with:
     #     kubectl-version: 'latest'
 
-    - name: Set up Linode Kubernetes cluster
-      run: |
-        echo "$KUBECONFIG" | base64 --decode > ~/Downloads/ydjoumbi-github-cluster-kubeconfig.yaml
-        mkdir ~/.kube
-        mv ~/Downloads/ydjoumbi-github-cluster-kubeconfig.yaml ~/.kube/config
+    # - name: Set up Linode Kubernetes cluster
+    #   run: |
+    #     echo "$KUBECONFIG" | base64 --decode > ~/Downloads/ydjoumbi-github-cluster-kubeconfig.yaml
+    #     mkdir ~/.kube
+    #     mv ~/Downloads/ydjoumbi-github-cluster-kubeconfig.yaml ~/.kube/config
 
     - name: Deploy to Linode Kubernetes cluster
       run: |
