@@ -53,6 +53,11 @@ jobs:
             docker build -t my-project ./Docker-files/
             docker tag my-project:latest public.ecr.aws/v6n8a7u8/my-project:latest 
             docker push public.ecr.aws/v6n8a7u8/my-project:latest
+    
+    - name: OWASP ZAP Baseline Scan
+      uses: zaproxy/action-baseline@v0.3.0
+      with:
+        target: "http://45-79-60-247.ip.linodeusercontent.com/"
       
     
 
