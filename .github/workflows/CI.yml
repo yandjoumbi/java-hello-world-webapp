@@ -30,7 +30,7 @@ jobs:
     - name: Run SonnarQube analysis
       env: 
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify sonar:sonar -Dsonar.projectKey=MyProject -Dsonar.host.url=http://13.56.224.174 -Dsonar.login=$SONAR_TOKEN
+      run: mvn -B verify sonar:sonar -Dsonar.projectKey=MyProject -Dsonar.host.url=http://54.151.76.124 -Dsonar.login=$SONAR_TOKEN
     
     - name: Setup AWS ECR Details  
       uses: aws-actions/configure-aws-credentials@v1
